@@ -30,7 +30,7 @@ public class UserDA {
         while(rs.next()){
             user_response.setName(rs.getString("name"));
             user_response.setSex(rs.getString("sex"));
-            user_response.setDetails("details");
+            user_response.setDetails(rs.getString("details"));
             user_response.setPassword(password);
             user_response.setUsername(username);
             counter++;
@@ -59,7 +59,36 @@ public class UserDA {
         stmt.executeUpdate(query);
         con.close();
     }
-    public String match(User user){
-        return null;
+    public String match(User user)throws Exception{
+        Connection con = DAInfo.getConnection();
+        Statement stmt = null;
+        String query,output;
+         query = "SELECT * FROM usuario_project where sex='Man'";
+        stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        int min=0;
+        output="";
+        while(rs.next()){
+            System.out.println(rs.getString("details"));
+            System.out.println(user.getDetails());
+            int top=getPoint(user,rs.getString("details"));
+            System.out.println(top);
+            if(min<top){
+                min=top;
+                output="Tiene un match con "+rs.getString("name")+"\n"+"Id: "+rs.getInt("id");
+            }
+
+        }
+        
+        return output;
+    }
+    private int getPoint(User user,String details){
+        int result=0;
+        String listaMujer[]=details.split(",");
+        String listaHombre[]=user.getDetails().split(",");
+        for(int i=0;i<6;i++){
+            if(listaMujer[i].equals(listaHombre[i]))result++;
+        }
+        return result;
     }
 }
