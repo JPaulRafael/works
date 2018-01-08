@@ -12,13 +12,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import modelo.User;
+import utils.QuickSort;
 
 /**
  *
  * @author KELLY
  */
 public class UserDA {
-    
+
     public User startSession(String username,String password) throws Exception{
         User user_response = new User();
         Connection con = DAInfo.getConnection();
@@ -38,11 +39,11 @@ public class UserDA {
         if(counter>=1){
             con.close();
             return user_response;
-        }else{ 
+        }else{
             con.close();
             return null;
         }
-        
+
     }
     public void insertUser(User user)throws Exception{
         Connection con = DAInfo.getConnection();
@@ -68,18 +69,29 @@ public class UserDA {
         ResultSet rs = stmt.executeQuery(query);
         int min=0;
         output="";
+        ArrayList<User>sortList=new ArrayList<>();
         while(rs.next()){
-            System.out.println(rs.getString("details"));
-            System.out.println(user.getDetails());
-            int top=getPoint(user,rs.getString("details"));
-            System.out.println(top);
-            if(min<top){
+            //System.out.println(rs.getString("details"));
+            //System.out.println(user.getDetails());
+            //int top=getPoint(user,rs.getString("details"));
+            User u=new User();
+            u.setName(rs.getString("name"));
+            u.setPoints(getPoint(user,rs.getString("details")));
+            u.setId(rs.getInt("id"));
+            sortList.add(u);
+            //System.out.println(top);
+            /*if(min<top){
                 min=top;
                 output="Tiene un match con "+rs.getString("name")+"\n"+"Id: "+rs.getInt("id");
-            }
+            }*/
 
         }
-        
+
+        QuickSort.sort(sortList);
+        output+="Posición 1: "+sortList.get(0).getPoints()+" ptos  Nombre: "+sortList.get(0).getName()+"   Id: "+sortList.get(0).getId()+"\n";
+        output+="Posición 2: "+sortList.get(1).getPoints()+" ptos  Nombre: "+sortList.get(1).getName()+"   Id: "+sortList.get(1).getId()+"\n";
+        output+="Posición 3: "+sortList.get(2).getPoints()+" ptos  Nombre: "+sortList.get(2).getName()+"   Id: "+sortList.get(2).getId()+"\n";
+        output+="Posición 4: "+sortList.get(3).getPoints()+" ptos  Nombre: "+sortList.get(3).getName()+"   Id: "+sortList.get(3).getId()+"\n";
         return output;
     }
     private int getPoint(User user,String details){

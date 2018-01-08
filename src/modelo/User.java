@@ -12,12 +12,28 @@ import java.util.ArrayList;
  * @author KELLY
  */
 public class User {
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
     private String name;
     private String username;
     private String password;
     private ArrayList<String> preferences;
     private String sex;
     private String details;
+    private int points;
+    private int id;
     public User(){}
     public User(String name,String username,String password,ArrayList<String>preferences,String sex){
         this.name = name;
@@ -114,5 +130,11 @@ public class User {
      */
     public void setDetails(String details) {
         this.details = details;
+    }
+    public int getPoints(){
+      return points;
+    }
+    public void setPoints(int points){
+      this.points=points;
     }
 }
