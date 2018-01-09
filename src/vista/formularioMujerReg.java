@@ -224,11 +224,19 @@ public class formularioMujerReg extends javax.swing.JDialog {
         //pasatiempo
         preferences.add(String.valueOf(jComboBox3.getSelectedItem()));
         //viajar
-        preferences.add((jRadioButton2.isSelected())?"Yes":"No");
+        if(jRadioButton2.isSelected()){
+            preferences.add("Yes");
+        }else if(jRadioButton3.isSelected()){
+            preferences.add("No");
+        }else preferences.add("No");
         //música
         preferences.add(String.valueOf(jComboBox4.getSelectedItem()));
          //viajar
-        preferences.add((jRadioButton4.isSelected())?"Yes":"No");
+         if(jRadioButton4.isSelected()){
+            preferences.add("Yes");
+        }else if(jRadioButton5.isSelected()){
+            preferences.add("No");
+        }else preferences.add("No");
         userController= new UserController();
         user.setPreferences(preferences);
         try{

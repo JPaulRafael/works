@@ -42,6 +42,17 @@ public class formularioDetalle extends javax.swing.JPanel {
     public void setUser(User user){
         this.user=user;
         jLabel1.setText("Bienvenida "+user.getName());
+        String[]list = (user.getDetails()).split(",");
+        jComboBox2.setSelectedItem(list[0]);
+        jComboBox1.setSelectedItem(list[1]);
+        jComboBox3.setSelectedItem(list[2]);
+        jComboBox4.setSelectedItem(list[5]);
+        if(list[4].equals("Yes"))jRadioButton2.setSelected(true);
+        else jRadioButton3.setSelected(true);
+        
+        if(list[6].equals("Yes"))jRadioButton4.setSelected(true);
+        else jRadioButton5.setSelected(true);
+
     }
 
     /**
@@ -94,6 +105,12 @@ public class formularioDetalle extends javax.swing.JPanel {
         jLabel3.setText("Qué cualidades te gustan de un chico?");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATENTO", "CARIÑOSO", "EXPRESIVO", "EXTROVERTIDO", "SERIO", "JOVIAL" }));
+        jComboBox2.setSelectedIndex(4);
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Desea modificar sus preferencias?");
@@ -274,6 +291,10 @@ public class formularioDetalle extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Datos Actualizados!");
         //this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
