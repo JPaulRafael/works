@@ -46,11 +46,11 @@ public class formularioDetalle extends javax.swing.JPanel {
         jComboBox2.setSelectedItem(list[0]);
         jComboBox1.setSelectedItem(list[1]);
         jComboBox3.setSelectedItem(list[2]);
-        jComboBox4.setSelectedItem(list[5]);
-        if(list[4].equals("Yes"))jRadioButton2.setSelected(true);
+        jComboBox4.setSelectedItem(list[4]);
+        if(list[3].equals("Yes"))jRadioButton2.setSelected(true);
         else jRadioButton3.setSelected(true);
         
-        if(list[6].equals("Yes"))jRadioButton4.setSelected(true);
+        if(list[5].equals("Yes"))jRadioButton4.setSelected(true);
         else jRadioButton5.setSelected(true);
 
     }
