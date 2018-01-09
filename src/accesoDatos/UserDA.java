@@ -80,10 +80,10 @@ public class UserDA {
         }
 
         QuickSort.sort(sortList);
-        output+="Posición 1: "+sortList.get(0).getPoints()+" ptos  Nombre: "+sortList.get(0).getName()+"   Id: "+sortList.get(0).getId()+"\n";
-        output+="Posición 2: "+sortList.get(1).getPoints()+" ptos  Nombre: "+sortList.get(1).getName()+"   Id: "+sortList.get(1).getId()+"\n";
-        output+="Posición 3: "+sortList.get(2).getPoints()+" ptos  Nombre: "+sortList.get(2).getName()+"   Id: "+sortList.get(2).getId()+"\n";
-        //output+="Posición 4: "+sortList.get(3).getPoints()+" ptos  Nombre: "+sortList.get(3).getName()+"   Id: "+sortList.get(3).getId()+"\n";
+        output+="Nombre "+sortList.get(0).getName()+ "  -   "+String.format("%.02f",(float)sortList.get(0).getPoints()/6*100)+"%\n";
+        output+="Nombre "+sortList.get(1).getName()+ "  -   "+String.format("%.02f",(float)sortList.get(1).getPoints()/6*100)+"%\n";
+        output+="Nombre "+sortList.get(2).getName()+ "  -   "+String.format("%.02f",(float)sortList.get(2).getPoints()/6*100)+"%\n";
+        output+="Nombre "+sortList.get(3).getName()+ "  -   "+String.format("%.02f",(float)sortList.get(3).getPoints()/6*100)+"%\n";
         return output;
     }
     private int getPoint(User user,String details){
