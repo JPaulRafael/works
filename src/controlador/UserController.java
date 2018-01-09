@@ -26,4 +26,7 @@ public class UserController {
     public String match(User user)throws Exception{
         return userDA.match(user);
     }
+    public void updateUser(User user)throws Exception{
+        userDA.updateUser(user);
+    }
 }

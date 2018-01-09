@@ -165,7 +165,7 @@ public class formularioInicio extends javax.swing.JPanel {
                 ownerFrame.setContentPane(f);
                 ownerFrame.revalidate();
             }else{
-
+                
             }
         }catch(Exception e){
 

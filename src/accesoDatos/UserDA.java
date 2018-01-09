@@ -29,6 +29,7 @@ public class UserDA {
         ResultSet rs = stmt.executeQuery(query);
         int counter=0;
         while(rs.next()){
+            user_response.setId(rs.getInt("id"));
             user_response.setName(rs.getString("name"));
             user_response.setSex(rs.getString("sex"));
             user_response.setDetails(rs.getString("details"));
@@ -55,7 +56,6 @@ public class UserDA {
         String query = "INSERT INTO usuario_project (username,password,name,details,sex) "
                 + "values('"+user.getUsername()+"','"+user.getPassword()+
                 "','"+user.getName()+"','"+preferences+"','"+user.getSex()+"')";
-        System.out.println(query);
         stmt = con.createStatement();
         stmt.executeUpdate(query);
         con.close();
@@ -71,19 +71,11 @@ public class UserDA {
         output="";
         ArrayList<User>sortList=new ArrayList<>();
         while(rs.next()){
-            //System.out.println(rs.getString("details"));
-            //System.out.println(user.getDetails());
-            //int top=getPoint(user,rs.getString("details"));
             User u=new User();
             u.setName(rs.getString("name"));
             u.setPoints(getPoint(user,rs.getString("details")));
             u.setId(rs.getInt("id"));
             sortList.add(u);
-            //System.out.println(top);
-            /*if(min<top){
-                min=top;
-                output="Tiene un match con "+rs.getString("name")+"\n"+"Id: "+rs.getInt("id");
-            }*/
 
         }
 
@@ -91,7 +83,7 @@ public class UserDA {
         output+="Posición 1: "+sortList.get(0).getPoints()+" ptos  Nombre: "+sortList.get(0).getName()+"   Id: "+sortList.get(0).getId()+"\n";
         output+="Posición 2: "+sortList.get(1).getPoints()+" ptos  Nombre: "+sortList.get(1).getName()+"   Id: "+sortList.get(1).getId()+"\n";
         output+="Posición 3: "+sortList.get(2).getPoints()+" ptos  Nombre: "+sortList.get(2).getName()+"   Id: "+sortList.get(2).getId()+"\n";
-        output+="Posición 4: "+sortList.get(3).getPoints()+" ptos  Nombre: "+sortList.get(3).getName()+"   Id: "+sortList.get(3).getId()+"\n";
+        //output+="Posición 4: "+sortList.get(3).getPoints()+" ptos  Nombre: "+sortList.get(3).getName()+"   Id: "+sortList.get(3).getId()+"\n";
         return output;
     }
     private int getPoint(User user,String details){
@@ -102,5 +94,17 @@ public class UserDA {
             if(listaMujer[i].equals(listaHombre[i]))result++;
         }
         return result;
+    }
+    public void updateUser(User user)throws Exception{
+        Connection con = DAInfo.getConnection();
+	Statement stmt = null;
+        String preferences=user.getPreferences().get(0)+","+
+                user.getPreferences().get(1)+","+user.getPreferences().get(2)+","+
+                user.getPreferences().get(3)+","+user.getPreferences().get(4)+","+
+                user.getPreferences().get(5);
+        String query="UPDATE usuario_project SET details='"+preferences+"' where id="+user.getId()+" ";
+        stmt = con.createStatement();
+        stmt.executeUpdate(query);
+        con.close();
     }
 }
