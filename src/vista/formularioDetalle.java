@@ -193,7 +193,7 @@ public class formularioDetalle extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 108, Short.MAX_VALUE))))
+                        .addGap(0, 438, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,18 +234,18 @@ public class formularioDetalle extends javax.swing.JPanel {
                     .addComponent(jRadioButton5))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -277,10 +277,12 @@ public class formularioDetalle extends javax.swing.JPanel {
         preferences.add(String.valueOf(jComboBox3.getSelectedItem()));
         //viajar
         preferences.add((jRadioButton2.isSelected())?"Yes":"No");
+        System.out.println((jRadioButton2.isSelected())?"Yes":"No");
         //música
         preferences.add(String.valueOf(jComboBox4.getSelectedItem()));
         //viajar
         preferences.add((jRadioButton4.isSelected())?"Yes":"No");
+        System.out.println((jRadioButton4.isSelected())?"Yes":"No");
         userController= new UserController();
         user.setPreferences(preferences);
         try{
