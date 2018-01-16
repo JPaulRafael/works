@@ -12,6 +12,7 @@ public class DAInfo {
  
 
 	public static Connection getConnection() throws SQLException {
+                //PREPARAMOS LA CONEXION A LA BASE DE DATOS
 		long startTime = System.nanoTime();
 		Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD); 
 		long endTime = System.nanoTime();

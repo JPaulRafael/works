@@ -87,6 +87,7 @@ public class formularioDetalle extends javax.swing.JPanel {
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jLabel2.setText("Qué cualidades te gustan de un chico?");
 
@@ -104,8 +105,7 @@ public class formularioDetalle extends javax.swing.JPanel {
 
         jLabel3.setText("Qué cualidades te gustan de un chico?");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATENTO", "CARIÑOSO", "EXPRESIVO", "EXTROVERTIDO", "SERIO", "JOVIAL" }));
-        jComboBox2.setSelectedIndex(4);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "ATENTO", "CARIÑOSO", "EXPRESIVO", "EXTROVERTIDO", "JOVIAL", "SERIO", " " }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -117,11 +117,11 @@ public class formularioDetalle extends javax.swing.JPanel {
 
         jLabel5.setText("Cuál es tu deporte favorito");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FÚTBOL", "TENIS", "BASQUET", "VOLLEY", "NATACIÓN", "BADMINTON", "NINGUNO" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "BADMINTON", "BASQUET", "FÚTBOL", "NATACIÓN", "TENIS", "VOLLEY", " ", " ", " " }));
 
         jLabel6.setText("Cuál es tu pasatiempo favorito?");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LEER", "JUGAR VIDEOJUEGOS", "VER TELEVISIÓN", "DIBUJAR", "GIMNASIO", "OTROS" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "DIBUJAR", "GIMNASIO", "JUGAR VIDEOJUEGOS", "LEER", "OTROS", "VER TELEVISIÓN", " " }));
 
         jLabel7.setText("Te gusta viajar?");
 
@@ -141,7 +141,7 @@ public class formularioDetalle extends javax.swing.JPanel {
 
         jLabel8.setText("Qué género de música te gusta?");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ROCK", "SALSA", "BACHATA", "VARIADO", "CUMBIA", "NINGUNO" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NINGUNO", "BACHATA", "CUMBIA", "ROCK", "SALSA", "VARIADO", " ", " " }));
 
         jLabel9.setText("Te gusta ir al cine?");
 
@@ -153,6 +153,13 @@ public class formularioDetalle extends javax.swing.JPanel {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Atrás");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -172,6 +179,10 @@ public class formularioDetalle extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jRadioButton4)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRadioButton5))
@@ -189,10 +200,7 @@ public class formularioDetalle extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 438, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -233,7 +241,9 @@ public class formularioDetalle extends javax.swing.JPanel {
                     .addComponent(jRadioButton4)
                     .addComponent(jRadioButton5))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(266, Short.MAX_VALUE))
         );
 
@@ -241,7 +251,7 @@ public class formularioDetalle extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,12 +308,20 @@ public class formularioDetalle extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         //formularioIngreso f =new formularioIngreso();
+         ownerFrame.setContentPane(new formularioInicio(ownerFrame));
+        ownerFrame.revalidate();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

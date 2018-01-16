@@ -215,7 +215,7 @@ public class formularioMujerReg extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //recover all data
+        //recogemos los datos
         ArrayList<String>preferences = new ArrayList<>();
         //gusto
         preferences.add(String.valueOf(jComboBox2.getSelectedItem()));
@@ -240,6 +240,7 @@ public class formularioMujerReg extends javax.swing.JDialog {
         userController= new UserController();
         user.setPreferences(preferences);
         try{
+            //registramos el usuario en la base de datos
             userController.insertUser(user);
             state=true;
         }

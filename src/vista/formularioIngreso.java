@@ -19,6 +19,7 @@ public class formularioIngreso extends javax.swing.JFrame {
     private UserController userController;
     public formularioIngreso() {
         initComponents();
+        //cargamos la vista de inicio de sesion y/o registro
         this.setContentPane(new formularioInicio(this));
         this.revalidate();
     }

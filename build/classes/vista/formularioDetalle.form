@@ -29,7 +29,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" min="-2" pref="800" max="-2" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="800" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -63,6 +63,11 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Component id="jButton2" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" pref="99" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
@@ -83,10 +88,6 @@
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" pref="129" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="438" max="32767" attributes="0"/>
@@ -135,7 +136,10 @@
                       <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace pref="266" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -166,16 +170,17 @@
         <Component class="javax.swing.JComboBox" name="jComboBox2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="ATENTO"/>
-                <StringItem index="1" value="CARI&#xd1;OSO"/>
-                <StringItem index="2" value="EXPRESIVO"/>
-                <StringItem index="3" value="EXTROVERTIDO"/>
-                <StringItem index="4" value="SERIO"/>
+              <StringArray count="8">
+                <StringItem index="0" value="NINGUNO"/>
+                <StringItem index="1" value="ATENTO"/>
+                <StringItem index="2" value="CARI&#xd1;OSO"/>
+                <StringItem index="3" value="EXPRESIVO"/>
+                <StringItem index="4" value="EXTROVERTIDO"/>
                 <StringItem index="5" value="JOVIAL"/>
+                <StringItem index="6" value="SERIO"/>
+                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
-            <Property name="selectedIndex" type="int" value="4"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
@@ -200,14 +205,17 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
-                <StringItem index="0" value="F&#xda;TBOL"/>
-                <StringItem index="1" value="TENIS"/>
+              <StringArray count="10">
+                <StringItem index="0" value="NINGUNO"/>
+                <StringItem index="1" value="BADMINTON"/>
                 <StringItem index="2" value="BASQUET"/>
-                <StringItem index="3" value="VOLLEY"/>
+                <StringItem index="3" value="F&#xda;TBOL"/>
                 <StringItem index="4" value="NATACI&#xd3;N"/>
-                <StringItem index="5" value="BADMINTON"/>
-                <StringItem index="6" value="NINGUNO"/>
+                <StringItem index="5" value="TENIS"/>
+                <StringItem index="6" value="VOLLEY"/>
+                <StringItem index="7" value=" "/>
+                <StringItem index="8" value=" "/>
+                <StringItem index="9" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -223,13 +231,15 @@
         <Component class="javax.swing.JComboBox" name="jComboBox3">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="LEER"/>
-                <StringItem index="1" value="JUGAR VIDEOJUEGOS"/>
-                <StringItem index="2" value="VER TELEVISI&#xd3;N"/>
-                <StringItem index="3" value="DIBUJAR"/>
-                <StringItem index="4" value="GIMNASIO"/>
+              <StringArray count="8">
+                <StringItem index="0" value="NINGUNO"/>
+                <StringItem index="1" value="DIBUJAR"/>
+                <StringItem index="2" value="GIMNASIO"/>
+                <StringItem index="3" value="JUGAR VIDEOJUEGOS"/>
+                <StringItem index="4" value="LEER"/>
                 <StringItem index="5" value="OTROS"/>
+                <StringItem index="6" value="VER TELEVISI&#xd3;N"/>
+                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -266,13 +276,15 @@
         <Component class="javax.swing.JComboBox" name="jComboBox4">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="ROCK"/>
-                <StringItem index="1" value="SALSA"/>
-                <StringItem index="2" value="BACHATA"/>
-                <StringItem index="3" value="VARIADO"/>
-                <StringItem index="4" value="CUMBIA"/>
-                <StringItem index="5" value="NINGUNO"/>
+              <StringArray count="8">
+                <StringItem index="0" value="NINGUNO"/>
+                <StringItem index="1" value="BACHATA"/>
+                <StringItem index="2" value="CUMBIA"/>
+                <StringItem index="3" value="ROCK"/>
+                <StringItem index="4" value="SALSA"/>
+                <StringItem index="5" value="VARIADO"/>
+                <StringItem index="6" value=" "/>
+                <StringItem index="7" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -301,6 +313,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atr&#xe1;s"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

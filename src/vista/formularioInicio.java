@@ -162,6 +162,7 @@ public class formularioInicio extends javax.swing.JPanel {
         String password=jPasswordField1.getText();
         userController = new UserController();
         try{
+            //recogemos el usuario a partir de usuario y contraseña
             User user=userController.startSession(username, password);
             if(user!=null){
                 //
@@ -180,6 +181,7 @@ public class formularioInicio extends javax.swing.JPanel {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
+        // cargamos la vista del formulario de registro
         ownerFrame.setContentPane(new formularioReg(ownerFrame));
         ownerFrame.revalidate();
     }//GEN-LAST:event_jLabel3MouseClicked
