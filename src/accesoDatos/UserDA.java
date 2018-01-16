@@ -60,7 +60,8 @@ public class UserDA {
         stmt.executeUpdate(query);
         con.close();
     }
-    public String match(User user)throws Exception{
+    public String match(User current_user)throws Exception{
+        User user = startSession(current_user.getUsername(),current_user.getPassword());
         Connection con = DAInfo.getConnection();
         Statement stmt = null;
         String query,output;

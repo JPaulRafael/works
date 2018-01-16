@@ -277,12 +277,12 @@ public class formularioDetalle extends javax.swing.JPanel {
         preferences.add(String.valueOf(jComboBox3.getSelectedItem()));
         //viajar
         preferences.add((jRadioButton2.isSelected())?"Yes":"No");
-        System.out.println((jRadioButton2.isSelected())?"Yes":"No");
+        //System.out.println((jRadioButton2.isSelected())?"Yes":"No");
         //música
         preferences.add(String.valueOf(jComboBox4.getSelectedItem()));
         //viajar
         preferences.add((jRadioButton4.isSelected())?"Yes":"No");
-        System.out.println((jRadioButton4.isSelected())?"Yes":"No");
+        //System.out.println((jRadioButton4.isSelected())?"Yes":"No");
         userController= new UserController();
         user.setPreferences(preferences);
         try{
